@@ -27,4 +27,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           args: User ${{github.actor}} in ${{ github.repository }} repository. Make ${{ github.event_name }}.
+      - name: send telegram message on push personal
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_ME }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: User ${{github.actor}} in ${{ github.repository }} repository. Make ${{ github.event_name }}.
          
